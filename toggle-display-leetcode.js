@@ -1,15 +1,19 @@
-(function()
-{
-    var filter = new RegExp("=\"ac");
-    var list=document.getElementById("problemList").childNodes[3].childNodes;
-    for (var i=1;i<list.length;i+=2){
-        if (filter.test(list[i].children[0].innerHTML)) {
-            if (list[i].style.display == "none") {
-                list[i].style.display="";
-            } else {
-                list[i].style.display="none";
-            }
+(
+    function()
+    {
+        var color = $( ".notac" ).css("background-color");
+        if (color == "rgb(255, 255, 0)") {
+            $( ".notac" ).css("background-color", "");
+        } else {
+            $( ".notac" ).css("background-color", "yellow");
         }
+
+        var current = $( ".ac" ).parent().parent().css("display");
+        if (current == "none") {
+            $( ".ac" ).parent().parent().css("display", "");
+        } else {
+            $( ".ac" ).parent().parent().css("display", "none");
+        }
+        return;
     }
-    return;
-})();
+)();
